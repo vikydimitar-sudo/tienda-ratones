@@ -21,8 +21,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 8000,
     },
     precio_mercado: 139,
-    imagenes: ["/products/viper-v3-pro.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    imagenes: ["/products/viper-v3-pro.webp"],
     descripcion:
       "Ratón gaming ultraligero de competición con sensor de 35.000 DPI y polling de 8.000 Hz para una respuesta instantánea.",
   },
@@ -41,10 +40,9 @@ const RAW_PRODUCTS: MouseProductInput[] = [
     },
     precio_mercado: 29,
     imagenes: [
-      "/products/deathadder-essential.jpg",
-      "/products/deathadder-essential-2.jpg",
+      "/products/deathadder-essential.webp",
+      "/products/deathadder-essential-2.webp",
     ],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     descripcion:
       "El clásico ergonómico para diestros. Fiable, cómodo y con un sensor óptico preciso a un precio de entrada.",
   },
@@ -62,8 +60,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 125,
     },
     precio_mercado: 119,
-    imagenes: ["/products/mx-master-4.jpg", "/products/mx-master-4-2.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    imagenes: ["/products/mx-master-4.webp", "/products/mx-master-4-2.webp"],
     descripcion:
       "Ratón de productividad premium con rueda MagSpeed, scroll horizontal y seguimiento Darkfield en cualquier superficie, incluido cristal.",
   },
@@ -81,8 +78,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 125,
     },
     precio_mercado: 25,
-    imagenes: ["/products/pebble-2.jpg", "/products/pebble-2-2.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    imagenes: ["/products/pebble-2.webp", "/products/pebble-2-2.webp"],
     descripcion:
       "Ratón delgado, silencioso y portátil. Ideal para trabajar en bibliotecas o cafeterías sin molestar a nadie.",
   },
@@ -100,8 +96,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 2000,
     },
     precio_mercado: 159,
-    imagenes: ["/products/g-pro-x-superlight.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    imagenes: ["/products/g-pro-x-superlight.webp"],
     descripcion:
       "Inalámbrico de gama alta para esports: 60 g, deslizamiento perfecto y autonomía de hasta 95 horas.",
   },
@@ -119,8 +114,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 125,
     },
     precio_mercado: 49,
-    imagenes: ["/products/ergo-m575.jpg", "/products/ergo-m575-2.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+    imagenes: ["/products/ergo-m575.webp", "/products/ergo-m575-2.webp"],
     descripcion:
       "Trackball ergonómico que reduce el movimiento de muñeca. El pulgar controla el cursor: ideal para jornadas largas.",
   },
@@ -138,8 +132,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 125,
     },
     precio_mercado: 69,
-    imagenes: ["/products/vertical-lift.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    imagenes: ["/products/vertical-lift.webp"],
     descripcion:
       "Diseño vertical a 57° que mantiene la muñeca en posición natural para prevenir molestias por uso prolongado.",
   },
@@ -157,8 +150,7 @@ const RAW_PRODUCTS: MouseProductInput[] = [
       polling_hz: 1000,
     },
     precio_mercado: 89,
-    imagenes: ["/products/aerox-3-wireless.jpg"],
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    imagenes: ["/products/aerox-3-wireless.webp"],
     descripcion:
       "Ligero, resistente al agua y al polvo gracias a su diseño perforado AquaBarrier. Inalámbrico con doble conectividad.",
   },

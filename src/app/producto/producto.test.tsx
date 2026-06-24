@@ -22,12 +22,11 @@ describe("Ficha de producto", () => {
     );
   });
 
-  it("muestra specs y vídeo", async () => {
+  it("muestra las specs", async () => {
     const product = PRODUCTS[2];
     const ui = await ProductPage({ params: Promise.resolve({ id: product.id }) });
     render(<Providers>{ui}</Providers>);
 
-    expect(screen.getByTestId("product-video")).toBeInTheDocument();
     expect(screen.getByText(product.specs.sensor)).toBeInTheDocument();
   });
 });

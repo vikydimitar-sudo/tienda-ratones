@@ -39,7 +39,6 @@ describe("catálogo", () => {
       expect(p.specs.conexion).toBeTruthy();
       expect(p.specs.polling_hz).toBeGreaterThan(0);
       expect(p.imagenes.length).toBeGreaterThan(0);
-      expect(p.video).toBeTruthy();
       expect(p.descripcion).toBeTruthy();
     }
   });

@@ -19,6 +19,7 @@ if (typeof window !== "undefined") {
 }
 
 afterEach(() => {
-  cleanup();
-  localStorage.clear();
+  // Las suites en entorno "node" (p. ej. quality.test.ts) no tienen DOM/localStorage.
+  if (typeof document !== "undefined") cleanup();
+  if (typeof localStorage !== "undefined") localStorage.clear();
 });

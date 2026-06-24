@@ -66,16 +66,18 @@ export default async function ProductPage({
               ))}
             </div>
           )}
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            className="w-full rounded-2xl border border-white/10"
-            data-testid="product-video"
-          >
-            <source src={product.video} type="video/mp4" />
-            Tu navegador no soporta vídeo HTML5.
-          </video>
+          {product.video && (
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full rounded-2xl border border-white/10"
+              data-testid="product-video"
+            >
+              <source src={product.video} type="video/mp4" />
+              Tu navegador no soporta vídeo HTML5.
+            </video>
+          )}
         </div>
 
         <div className="space-y-5">

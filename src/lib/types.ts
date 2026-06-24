@@ -20,7 +20,8 @@ export interface MouseProductInput {
   specs: MouseSpecs;
   precio_mercado: number;
   imagenes: string[];
-  video: string;
+  /** Vídeo opcional (stock libre). Vacío = no se muestra reproductor. */
+  video?: string;
   descripcion: string;
 }
 

@@ -8,8 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "qa": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {
     "next": "^15.5.19",
