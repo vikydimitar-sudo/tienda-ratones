@@ -38,5 +38,3 @@ next-env.d.ts
 
 .vercel
 
-# CI pendiente de permiso workflow en el token
-/.github/workflows/ci.yml
