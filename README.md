@@ -7,8 +7,8 @@ editar archivos → `git push` → redeploy automático en Vercel.
 
 ## 🌐 Enlaces
 
-- **Web pública:** _(ver salida del deploy / pestaña Deployments en Vercel)_
-- **Repositorio:** _(GitHub)_
+- **Web pública:** https://tienda-ratones.vercel.app
+- **Repositorio:** https://github.com/vikydimitar-sudo/tienda-ratones
 
 ## 🧱 Stack y por qué
 
