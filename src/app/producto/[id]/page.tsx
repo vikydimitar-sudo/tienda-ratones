@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getProductById, PRODUCTS } from "@/lib/data";
 import { formatEUR, MARGEN_VENTA } from "@/lib/pricing";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { WishlistButton } from "@/components/WishlistButton";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ id: p.id }));
@@ -29,13 +30,13 @@ export default async function ProductPage({
 
   return (
     <div>
-      <Link href="/" className="text-sm text-indigo-300 hover:underline">
+      <Link href="/" className="text-sm link">
         ← Volver al catálogo
       </Link>
 
       <div className="mt-4 grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div className="space-y-4">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-black/30">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-black/40">
             <Image
               src={product.imagenes[0]}
               alt={product.nombre}
@@ -46,28 +47,30 @@ export default async function ProductPage({
               priority
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {product.imagenes.slice(1).map((img, i) => (
-              <div
-                key={i}
-                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-black/30"
-              >
-                <Image
-                  src={img}
-                  alt={`${product.nombre} vista ${i + 2}`}
-                  fill
-                  sizes="25vw"
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-            ))}
-          </div>
+          {product.imagenes.length > 1 && (
+            <div className="grid grid-cols-2 gap-4">
+              {product.imagenes.slice(1).map((img, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[4/3] overflow-hidden rounded-xl bg-black/40"
+                >
+                  <Image
+                    src={img}
+                    alt={`${product.nombre} vista ${i + 2}`}
+                    fill
+                    sizes="25vw"
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </div>
+          )}
           <video
             controls
             playsInline
             preload="metadata"
-            className="w-full rounded-xl border border-white/10"
+            className="w-full rounded-2xl border border-white/10"
             data-testid="product-video"
           >
             <source src={product.video} type="video/mp4" />
@@ -80,7 +83,12 @@ export default async function ProductPage({
             <span className="badge">{product.categoria}</span>
             <span className="text-sm text-slate-400">{product.marca}</span>
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight">{product.nombre}</h1>
+          <div className="flex items-start justify-between gap-4">
+            <h1 className="text-3xl font-extrabold tracking-tight">
+              {product.nombre}
+            </h1>
+            <WishlistButton id={product.id} nombre={product.nombre} />
+          </div>
           <p className="text-slate-300">{product.descripcion}</p>
 
           <div className="card">
@@ -104,10 +112,10 @@ export default async function ProductPage({
             <tbody>
               {specRows.map((row) => (
                 <tr key={row.label} className="border-b border-white/10">
-                  <th className="py-2 text-left font-medium text-slate-400">
+                  <th className="py-2.5 text-left font-medium text-slate-400">
                     {row.label}
                   </th>
-                  <td className="py-2 text-right">{row.value}</td>
+                  <td className="py-2.5 text-right">{row.value}</td>
                 </tr>
               ))}
             </tbody>

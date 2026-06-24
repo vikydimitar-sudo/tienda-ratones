@@ -2,19 +2,28 @@
 
 import { useState } from "react";
 import type { MouseProduct } from "@/lib/types";
-import { useCart } from "./CartContext";
+import { useStore } from "./store";
+import { useToast } from "./Toaster";
 
-export function AddToCartButton({ product }: { product: MouseProduct }) {
-  const { add } = useCart();
+export function AddToCartButton({
+  product,
+  className = "",
+}: {
+  product: MouseProduct;
+  className?: string;
+}) {
+  const { addToCart } = useStore();
+  const { toast } = useToast();
   const [added, setAdded] = useState(false);
 
   return (
     <button
       type="button"
-      className="btn-primary w-full"
+      className={`btn-primary w-full ${className}`}
       data-testid={`add-${product.id}`}
       onClick={() => {
-        add(product);
+        addToCart(product);
+        toast(`${product.nombre} añadido al carrito`);
         setAdded(true);
         window.setTimeout(() => setAdded(false), 1200);
       }}

@@ -40,14 +40,42 @@ cálculo para todos los productos.
 
 ## ✨ Funcionalidades
 
+**Catálogo**
 - **Home** (`/`) con catálogo y **filtros por categoría**.
-- **Ficha** (`/producto/[id]`) con specs, varias fotos, vídeo y el precio
+- **Buscador** (`/buscar`): busca por nombre, marca, categoría o sensor.
+- **Ficha** (`/producto/[id]`) con specs, fotos reales, vídeo y el precio
   calculado (mostrando la fórmula).
 - **Comparador** (`/comparar`): enfrenta 2 o más ratones con sus specs lado a lado.
-- **Carrito** (`/carrito`): añade, cambia cantidades, ve el total en vivo
-  (persistido en `localStorage`).
-- **Checkout simulado** (`/checkout`): formulario de envío, confirma el pedido,
-  genera un nº de pedido y muestra el resumen. **No hay cobro real.**
+
+**Cuenta (simulada, 100% en el navegador)**
+- **Registro y login** (`/registro`, `/login`) con email + contraseña.
+- **Login con Google** simulado (un clic crea/reutiliza una cuenta demo).
+- **Mi cuenta** (`/cuenta`): perfil y dirección de envío guardada.
+- **Favoritos** (`/favoritos`): lista de deseos por usuario.
+
+**Compra**
+- **Carrito persistente por usuario** (`/carrito`): el carrito se guarda y, al
+  iniciar sesión, el carrito de invitado se fusiona con el de la cuenta.
+- **Checkout multipaso** (`/checkout`): dirección → empresa de envío (simuladas)
+  → **pago con tarjeta validado** (Luhn, caducidad, CVV) + **3-D Secure
+  simulado**. Botón de tarjeta de prueba incluido. **Nunca hay cobro real.**
+
+**Post-compra**
+- **Mis pedidos** (`/pedidos`) e historial con estado.
+- **Seguimiento en vivo** (`/pedidos/[id]`): la línea de tiempo avanza sola
+  (confirmado → preparando → enviado → en reparto → entregado).
+- **Bandeja de entrada** (`/bandeja`): correos **simulados** de bienvenida,
+  confirmación de pedido, envío (con nº de seguimiento) y entrega. Aparecen
+  dentro de la web; no se envían a servidores externos.
+- **Notificaciones** (toasts) en cada acción.
+
+> ⚠️ **Qué es simulado:** cuentas, contraseñas, login con Google, pagos con
+> tarjeta, empresas de envío, seguimiento y correos son todos simulados y viven
+> en el navegador (`localStorage`). No hay servidor, ni base de datos externa,
+> ni pasarela de pago, ni envío real de emails → **coste 0 €**. Para hacer
+> reales los correos / Google / persistencia entre dispositivos haría falta dar
+> de alta servicios gratuitos (Resend, Google Cloud, Supabase) y aceptar sus
+> términos.
 
 ## 🚀 Cómo Claude actualiza la web a futuro
 
@@ -83,7 +111,7 @@ lo hace editando el repo. El flujo es:
 npm install
 npm run dev      # http://localhost:3000
 npm run lint     # ESLint
-npm test         # Vitest (23 tests)
+npm test         # Vitest (41 tests)
 npm run build    # build de producción
 ```
 

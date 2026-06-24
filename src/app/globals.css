@@ -6,26 +6,78 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply bg-ink text-slate-100 antialiased;
+  @apply bg-base text-slate-100 antialiased;
+  background-image:
+    radial-gradient(60rem 60rem at 12% -10%, rgba(34, 211, 238, 0.16), transparent 55%),
+    radial-gradient(50rem 50rem at 100% 0%, rgba(56, 189, 248, 0.12), transparent 50%),
+    radial-gradient(60rem 50rem at 50% 120%, rgba(99, 102, 241, 0.12), transparent 55%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-.card {
-  @apply rounded-xl border border-white/10 bg-white/5 p-4;
+@layer components {
+  /* Panel de vidrio (glassmorphism) */
+  .glass {
+    @apply border border-white/10 bg-white/[0.06] backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply border border-white/10 bg-white/[0.09] backdrop-blur-2xl;
+  }
+
+  .card {
+    @apply glass rounded-2xl p-5 shadow-soft;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-accent to-accent-soft text-base shadow-glow hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply btn border border-white/15 bg-white/5 text-slate-100 hover:bg-white/10;
+  }
+  .btn-subtle {
+    @apply btn text-slate-300 hover:bg-white/10;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-black/30 px-3.5 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-accent/60 focus:ring-2 focus:ring-accent/30;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-400;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300;
+  }
+
+  .link {
+    @apply text-accent transition hover:text-accent-soft;
+  }
+
+  .h-display {
+    @apply text-3xl font-extrabold tracking-tight sm:text-4xl;
+  }
 }
 
-.btn {
-  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition;
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
-
-.btn-primary {
-  @apply btn bg-accent text-white hover:bg-indigo-500;
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
 }
-
-.btn-ghost {
-  @apply btn border border-white/15 text-slate-100 hover:bg-white/10;
-}
-
-.badge {
-  @apply inline-block rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-medium text-indigo-200;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.35);
 }
